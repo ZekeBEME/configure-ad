@@ -35,7 +35,7 @@ First, we will create two Virtual Machines in Azure named DC-1 and Client-1. We 
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/bBW3wdg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Once our VMs are created we can ensure connectivity between the two by utilizing the command-line tool ping. If the connection is blocked check the local firewall on DC-1 and enable ICMPv4. Check back to Client-1 to see if the ping succeeds. Don't forget to set DC-1's private IP address to static in the Azure Portal, this will be important later on.
@@ -43,7 +43,7 @@ Once our VMs are created we can ensure connectivity between the two by utilizing
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/i0Z1h9v.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Now we can log into DC-1 and install Active Directory Domain Services. Next, promote DC-1 to a DC controller and Setup a new forest with "yourdomain.com" (can be anything you want). When setup and installation are complete restart and log back into DC-1.
