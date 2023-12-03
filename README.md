@@ -51,14 +51,14 @@ Now we can log into DC-1 and install Active Directory Domain Services. Next, pro
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/W9DVZnT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 With our Active Directory successfully installed, we can now create an Admin and Normal user Account in AD. In AD create two Organizational Units (OU) called "_WORKERS" and "_ADMINS". Place a worker called "Jane Doe" and give her a simple username and password you can easily remember. Add Jane to the "Domain Admins" security group. Now we can log out of DC-1 and log back in as "Jane Doe" for our admin account.</p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/20a83pb.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Next, we need to join Client-1 to "yourdomain.com" by changing Client-1's DNS setting to DC-1's private IP address in the Azure portal. Then restart Client-1 from the Azure Portal and re-login as the original local admin to join the domain. Login to the DC-1 and verify Client-1 shows up in Active Directory Users and Computers inside the "Computers" container on the root of the domain
@@ -66,16 +66,16 @@ Next, we need to join Client-1 to "yourdomain.com" by changing Client-1's DNS se
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/l7Vc4bT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lastly, we need to setup Remote Desktop for non-administrative users on CLient-1. Login to CLient-1 with "Jane Doe's" credentials and open system properties. Click “Remote Desktop” and allow “domain users” access to remote desktop.
+Lastly, we need to setup remote Desktop for non-administrative users on Client-1. Login to Client-1 with "Jane Doe's" credentials and open system properties. Click “Remote Desktop” and allow “domain users” access to remote desktop.
 You can now log into Client-1 as a normal, non-administrative user now
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/u880ArJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 To test if this works you can go back into Active Directory on DC-1 and make a "Domain User" "John Doe" to see if you can connect to Client-1 (remote desktop).
