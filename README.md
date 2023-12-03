@@ -38,7 +38,7 @@ First, we will create two Virtual Machines in Azure named DC-1 and Client-1. We 
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Once our VMs are created we can ensure connectivity between the two by utilizing the command-line tool ping. If the connection is blocked check the local firewall on DC-1 and enable ICMPv4. Check back to Client-1 to see if the ping succeeds.
+Once our VMs are created we can ensure connectivity between the two by utilizing the command-line tool ping. If the connection is blocked check the local firewall on DC-1 and enable ICMPv4. Check back to Client-1 to see if the ping succeeds. Don't forget to set DC-1's private IP address to static in the Azure Portal, this will be important later on.
 </p>
 <br />
 
@@ -46,7 +46,7 @@ Once our VMs are created we can ensure connectivity between the two by utilizing
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now we can log into DC-1 and install Active Directory Domain Services. Next, promote DC-1 to a DC controller and Setup a new forest with yourdomain.com (can be anything you want). When setup and installation are complete restart and login back into DC-1.
+Now we can log into DC-1 and install Active Directory Domain Services. Next, promote DC-1 to a DC controller and Setup a new forest with "yourdomain.com" (can be anything you want). When setup and installation are complete restart and log back into DC-1.
 </p>
 <br />
 
@@ -54,7 +54,14 @@ Now we can log into DC-1 and install Active Directory Domain Services. Next, pro
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+With our Active Directory successfully installed, we can now create an Admin and Normal user Account in AD. In AD create two Organizational Units (OU) called "_WORKERS" and "_ADMINS". Place a worker called "Jane Doe" and give her a simple username and password you can easily remember. Add Jane to the "Domain Admins" security group. Now we can log out of DC-1 and log back in as "Jane Doe" for our admin account.</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Next, we need to join Client-1 to "yourdomain.com" by changing Client-1's DNS setting to DC-1's private IP address in the Azure portal. Then restart Client-1 from the Azure Portal and re-login as the original local admin to join the domain. Login to the DC-1 and verify Client-1 shows up in Active Directory Users and Computers inside the "Computers" container on the root of the domain
 </p>
 <br />
 
@@ -62,6 +69,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Lastly, we need to setup Remote Desktop for non-administrative users on CLient-1. Login to CLient-1 with "Jane Doe's" credentials and open system properties. Click “Remote Desktop” and allow “domain users” access to remote desktop.
+You can now log into Client-1 as a normal, non-administrative user now
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+To test if this works you can go back into Active Directory on DC-1 and make a "Domain User" "John Doe" to see if you can connect to Client-1 (remote desktop).
 </p>
 <br />
