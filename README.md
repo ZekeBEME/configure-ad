@@ -27,7 +27,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/hNuARhr.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 First, we will create two Virtual Machines in Azure named DC-1 and Client-1. We will make sure the Domain Controller is using Windows Server as the image and Client-1 uses Windows 10. Take note of making sure the two VMs are hosted on the same network to communicate with each other. 
@@ -81,3 +81,4 @@ You can now log into Client-1 as a normal, non-administrative user now
 To test if this works you can go back into Active Directory on DC-1 and make a "Domain User" "John Doe" to see if you can connect to Client-1 (remote desktop).
 </p>
 <br />
+
