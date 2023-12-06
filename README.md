@@ -32,7 +32,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/hNuARhr.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-First, we will create two Virtual Machines in Azure named DC-1 and Client-1. We will make sure the Domain Controller is using Windows Server as the image and Client-1 uses Windows 10. Take note of making sure the two VMs are hosted on the same network to communicate with each other. 
+First, we will create two Virtual Machines in Azure named DC-1 and Client-1. We will make sure the Domain Controller is using Windows Server as the image and Client-1 uses Windows 10. Check and make sure the two VMs are hosted on the same network to communicate with each other. 
 </p>
 <br />
 
@@ -48,7 +48,7 @@ Once our VMs are created we can ensure connectivity between the two by utilizing
 <img src="https://i.imgur.com/i0Z1h9v.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now we can log into DC-1 and install Active Directory Domain Services. Next, promote DC-1 to a DC controller and Setup a new forest with "yourdomain.com" (can be anything you want). When setup and installation are complete restart and log back into DC-1.
+Now we can log into DC-1 and install Active Directory Domain Services. Next, promote DC-1 to a DC controller and setup a new forest with "yourdomain.com" (can be anything you want). When setup and installation are complete restart and log back into DC-1.
 </p>
 <br />
 
@@ -56,7 +56,7 @@ Now we can log into DC-1 and install Active Directory Domain Services. Next, pro
 <img src="https://i.imgur.com/W9DVZnT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-With our Active Directory successfully installed, we can now create an Admin and Normal user Account in AD. In AD create two Organizational Units (OU) called "_WORKERS" and "_ADMINS". Place a worker called "Jane Doe" and give her a simple username and password you can easily remember. Add Jane to the "Domain Admins" security group. Now we can log out of DC-1 and log back in as "Jane Doe" for our admin account.</p>
+With our Active Directory successfully installed, we can now create an Admin and Normal user Account in AD. In AD create two Organizational Units (OU) called "_WORKERS" and "_ADMINS". Create a worker called "Jane Doe" and give her a simple username and password you can easily remember. Add Jane to the "Domain Admins" security group. Now we can log out of DC-1 and log back in as "Jane Doe" for our admin account.</p>
 <br />
 
 <p>
